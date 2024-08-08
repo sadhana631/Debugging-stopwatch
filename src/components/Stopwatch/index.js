@@ -8,13 +8,13 @@ class Stopwatch extends Component {
     timeElapsedInSeconds: 0,
   }
 
-  componentWillunmount() {
-    clearTimeout(this.timeInterval)
+  componentWillUnmount() {
+    clearInterval(this.timeInterval)
   }
 
   onResetTimer = () => {
     clearInterval(timeInterval)
-    this.setState({isTimerRunning: false})
+    this.setState({isTimerRunning: false, timeElapsedInSeconds: 0}) }
   }
 
   onStopTimer = () => {
@@ -102,4 +102,4 @@ class Stopwatch extends Component {
   }
 }
 
-default export Stopwatch
+export default Stopwatch
